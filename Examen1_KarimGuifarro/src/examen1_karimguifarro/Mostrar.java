@@ -5,7 +5,9 @@
  */
 package examen1_karimguifarro;
 
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -60,7 +62,11 @@ public class Mostrar extends javax.swing.JFrame {
         d = new javax.swing.JRadioButton();
         v = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
+        j = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        t = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,6 +124,8 @@ public class Mostrar extends javax.swing.JFrame {
             }
         });
 
+        j.setText("Jason");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -130,7 +138,9 @@ public class Mostrar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(c)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(s))
+                        .addComponent(s)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(j))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -156,7 +166,7 @@ public class Mostrar extends javax.swing.JFrame {
                                 .addComponent(d)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(v)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +192,8 @@ public class Mostrar extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(c)
-                    .addComponent(s))
+                    .addComponent(s)
+                    .addComponent(j))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -190,20 +201,51 @@ public class Mostrar extends javax.swing.JFrame {
                     .addComponent(v))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("tab1", jPanel2);
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Sexo", "Arma", "Ocupacion", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabla);
+
+        t.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(233, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("tab2", jPanel3);
@@ -212,11 +254,11 @@ public class Mostrar extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addGap(0, 416, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 342, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("tab3", jPanel4);
@@ -269,7 +311,8 @@ public class Mostrar extends javax.swing.JFrame {
     }//GEN-LAST:event_cActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nombre, edad, sexo,arma,ocupacion,estado;
+        String nombre, edad, sexo="",arma,ocupacion="",estado="";
+        int desaparecidos=0;
         try{
             nombre=nombres.getText();
             edad=edades.getText();
@@ -283,13 +326,43 @@ public class Mostrar extends javax.swing.JFrame {
                 ocupacion="Supervisor";
             }else if(c.isSelected()){
                 ocupacion="Campista";
+            }else if(j.isSelected()){
+                ocupacion="Jason";
             }
             if (d.isSelected()) {
                 estado="Desaparecido";
+                desaparecidos=+1;
             }else if(v.isSelected()){
                 estado="Vivo";
             }
-        }
+            Personas p=new Personas(nombre,edad,sexo,arma);
+             Campista n=new Campista(nombre,edad,sexo,arma,ocupacion,estado);
+            ElYeizoBorjis l=new ElYeizoBorjis(nombre,edad,sexo,arma,desaparecidos);
+            lista.add(p);
+            DefaultComboBoxModel dc=
+                    (DefaultComboBoxModel) t.getModel();
+                dc.addElement(p);
+                dc.addElement(n);
+                dc.addElement(l);
+                t.setModel(dc);
+                JOptionPane.showMessageDialog(this,
+                        "Persona almacenado exitosamente");
+                
+                nombres.setText("");
+                edades.setText("");
+                m.setSelected(true);
+                f.setSelected(false);
+                s.setSelected(true);
+                c.setSelected(false);
+                j.setSelected(false);
+                d.setSelected(false);
+                v.setSelected(true);
+                Armas.setSelectedIndex(0);
+        }catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -326,13 +399,15 @@ public class Mostrar extends javax.swing.JFrame {
             }
         });
     }
-
+    ArrayList<Personas> lista = new ArrayList();
+    Personas seleccionado;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Armas;
     private javax.swing.JRadioButton c;
     private javax.swing.JRadioButton d;
     private javax.swing.JTextField edades;
     private javax.swing.JRadioButton f;
+    private javax.swing.JRadioButton j;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -344,10 +419,14 @@ public class Mostrar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JRadioButton m;
     private javax.swing.JTextField nombres;
     private javax.swing.JRadioButton s;
+    private javax.swing.JComboBox<String> t;
+    private javax.swing.JTable tabla;
     private javax.swing.JRadioButton v;
     // End of variables declaration//GEN-END:variables
 }
+
