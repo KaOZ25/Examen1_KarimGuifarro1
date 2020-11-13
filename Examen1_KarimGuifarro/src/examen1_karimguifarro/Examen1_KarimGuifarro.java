@@ -15,7 +15,8 @@ public class Examen1_KarimGuifarro {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Mostrar v=new Mostrar();
+        v.setVisible(true);
     }
     
 }
