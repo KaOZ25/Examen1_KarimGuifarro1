@@ -209,7 +209,7 @@ public class Mostrar extends javax.swing.JFrame {
                 .addContainerGap(84, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("tab1", jPanel2);
+        jTabbedPane3.addTab("Añadir", jPanel2);
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -283,7 +283,7 @@ public class Mostrar extends javax.swing.JFrame {
                 .addContainerGap(83, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("tab2", jPanel3);
+        jTabbedPane3.addTab("Listar", jPanel3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
